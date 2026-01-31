@@ -1,0 +1,32 @@
+# tools
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.pyright/
+
+# virtual environments
+.venv/
+
+# Artifacts
+*.egg-info/
+build/
+artifacts/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
+*.swp
+
+# Secrets
+.env
+local.settings.json
+
+# etc
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+

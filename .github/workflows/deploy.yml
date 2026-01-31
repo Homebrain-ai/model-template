@@ -1,0 +1,39 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        type: choice
+        required: true
+        options:
+          - dev
+          - staging
+          - prod
+      image_tag:
+        description: "Image tag to deploy (default: current commit SHA)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.repository }}-${{ inputs.environment }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    uses: homebrain-ai/infra/.github/workflows/deploy.yml@v1
+    with:
+      environment: ${{ inputs.environment }}
+      release_name: homebrain-backend   # <-- change per service
+      namespace: homebrain              # <-- change as needed
+      chart: ./charts/app               # <-- change to your chart path
+      values_file: ""                   # e.g. ./charts/values-${{ inputs.environment }}.yaml
+      image_repository: ghcr.io/${{ github.repository_owner }}/homebrain-backend
+      image_tag: ${{ inputs.image_tag != '' && inputs.image_tag || github.sha }}
+      helm_timeout: "5m"
+    secrets:
+      KUBECONFIG_B64: ${{ secrets.KUBECONFIG_B64 }}

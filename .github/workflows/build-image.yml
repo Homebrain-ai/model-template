@@ -1,0 +1,31 @@
+name: build image
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+  attestations: write
+  artifact-metadata: write
+
+concurrency:
+  group: image-${{ github.repository }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    # This is the exact place to put the 'if'.
+    # It lets you control when the job runs even if the workflow triggers.
+    if: ${{ startsWith(github.ref, 'refs/heads/main') || startsWith(github.ref, 'refs/tags/v') }}
+    uses: homebrain-ai/infra/.github/workflows/build-image.yml@v1
+    with:
+      image_name: backend
+      context: "."
+      dockerfile: "Dockerfile"
+      push: true
+      platforms: "linux/amd64"
+      attest_provenance: false
