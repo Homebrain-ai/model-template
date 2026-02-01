@@ -13,7 +13,7 @@ Triggers on push to `main` (ideally only accepted PR's)
 .
 ├─ src/                 # application code
 ├─ tests/               # pytest tests
-├─ artifacts/           # model artifacts (usually ignored in git; use a registry/storage to store artifacts)
+├─ artifacts/           # model artifacts (usually ignored in git; use a registry/storage to store/pull artifacts)
 ├─ pyproject.toml       # dependencies + tool config
 ├─ Dockerfile           # if you ship as an image
 └─ .github/workflows/   # workflows that call platform workflows in infra repo
