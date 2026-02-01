@@ -1,5 +1,6 @@
+<!-- PR_TEMPLATE -->
 ---
-name: 🐛 Bug fix
+name: Bug fix 🐛
 about: Fix incorrect behavior / regression
 ---
 

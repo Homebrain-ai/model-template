@@ -1,5 +1,6 @@
+<!-- PR_TEMPLATE -->
 ---
-name: 🚑 Hotfix
+name: Hotfix 🚑
 about: Urgent fix
 ---
 

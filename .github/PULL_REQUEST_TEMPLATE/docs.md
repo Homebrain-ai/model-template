@@ -1,5 +1,6 @@
+<!-- PR_TEMPLATE -->
 ---
-name: 📝 Documentation
+name: Documentation 📝
 about: Improve docs / runbooks / examples
 ---
 

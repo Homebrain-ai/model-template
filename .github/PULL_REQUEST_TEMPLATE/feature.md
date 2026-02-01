@@ -1,5 +1,6 @@
+<!-- PR_TEMPLATE -->
 ---
-name: ✨ Feature
+name: Feature ✨
 about: Add new capability / behavior
 ---
 

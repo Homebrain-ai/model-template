@@ -1,5 +1,6 @@
+<!-- PR_TEMPLATE -->
 ---
-name: 🧹 Refactor
+name:  Refactor 🧹
 about: Restructure code without changing externally observable behavior
 ---
 
