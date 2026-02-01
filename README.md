@@ -11,7 +11,7 @@ Triggers on push to `main` (ideally only accepted PR's)
 ## Repo Structure
 ```bash
 .
-├─ src/                 # application code
+├─ app/                 # application code
 ├─ tests/               # pytest tests
 ├─ artifacts/           # model artifacts (usually ignored in git; use a registry/storage to store/pull artifacts)
 ├─ pyproject.toml       # dependencies + tool config
