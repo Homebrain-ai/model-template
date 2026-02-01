@@ -3,10 +3,10 @@ A lightweight template repo for building and shipping model-backed services in t
 
 ## Workflows You Get
 Triggers on push to `main` (ideally only accepted PR's)
-* `run-ci.yml` - 
-* `security.yml` - 
-* `build-image.yml` - 
-* `deploy.yml` - 
+1. `run-ci.yml` - 
+2. `security.yml` - 
+3. `build-image.yml` - 
+4. `deploy.yml` - 
 
 ## Repo Structure
 ```bash
