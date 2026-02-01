@@ -6,6 +6,9 @@ Triggers on push to `main` (ideally only accepted PR's)
 1. `run-ci.yml` - 
 2. `security.yml` - Runs against `main` every Monday. Runs on PR approval to main.
 3. `build-image.yml` - 
+    * PR to `main` → build, no push. 
+    * Merge/push to `main` → build + push. 
+    * Manual run → build + push
 4. `deploy.yml` - 
 
 ## Repo Structure
