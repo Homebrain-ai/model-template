@@ -1,7 +1,8 @@
-name: checks
+name: run-ci
 
 on:
   pull_request:
+    branches: [ main ]
   push:
     branches: [ main ]
 

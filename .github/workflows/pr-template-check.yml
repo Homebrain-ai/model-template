@@ -1,0 +1,20 @@
+name: pr-template-check
+
+on:
+  pull_request:
+    branches: [ main ]
+    types: [opened, edited, reopened, synchronize, ready_for_review]
+
+permissions:
+  pull-requests: read
+
+concurrency:
+  group: pr-template-check-${{ github.repository }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  pr-template-check:
+    uses: homebrain-ai/infra/.github/workflows/pr-template-check.yml@v1
+    with:
+      marker: "<!-- PR_TEMPLATE -->"
+      allow_drafts: true

@@ -3,10 +3,17 @@ A lightweight template repo for building and shipping model-backed services in t
 
 ## Workflows You Get
 Triggers on push to `main` (ideally only accepted PR's)
-1. `run-ci.yml` - 
-2. `security.yml` - 
-3. `build-image.yml` - 
-4. `deploy.yml` - 
+1. `run-ci.yml`
+    * PR to main → runs
+2. `security.yml`
+    * PR to main → runs
+    * Runs against main every Monday.
+3. `build-image.yml`
+    * PR to main → checks build, no push. 
+    * Merge/push to main → build + push. 
+    * Manual run → build + push
+4. `deploy.yml`
+    * Manual run → deploys
 
 ## Repo Structure
 ```bash
