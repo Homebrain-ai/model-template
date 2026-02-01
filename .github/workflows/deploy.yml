@@ -9,7 +9,6 @@ on:
         required: true
         options:
           - dev
-          - staging
           - prod
       image_tag:
         description: "Image tag to deploy (default: current commit SHA)"
