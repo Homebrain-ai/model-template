@@ -12,7 +12,7 @@ Triggers on push to `main` (ideally only accepted PR's)
 ```bash
 .
 ├─ app/                 # application code
-├─ tests/               # pytest tests
+├─ tests/               # model tests
 ├─ artifacts/           # model artifacts (usually ignored in git; use a registry/storage to store/pull artifacts)
 ├─ pyproject.toml       # dependencies + tool config
 ├─ Dockerfile           # if you ship as an image
